@@ -1,4 +1,4 @@
-import Dashboard from "@/components/dashboard";
+import Dashboard from '@/components/dashboard';
 
 /**
  * The main page component that renders the HomePage component.
@@ -6,9 +6,7 @@ import Dashboard from "@/components/dashboard";
  * @returns {JSX.Element} The rendered HomePage component.
  */
 const Page = () => {
-    return (
-        <Dashboard></Dashboard>
-    )
+    return <Dashboard></Dashboard>;
 };
 
 export default Page;

@@ -9,7 +9,7 @@ import Image from "next/image";
 import supabaseLoader from "@/utils/supabase/supabase-image-loader";
 
 interface Project {
-  id: string;
+  id: number;
   title: string;
   description: string;
   image: string[];
@@ -18,6 +18,13 @@ interface Project {
   technologies: string[];
   github?: string;
   demo?: string;
+  featured?: boolean;
+  category?: string[];
+  url?: string;
+  year?: string;
+  challenge?: string;
+  approach?: string;
+  result?: string;
 }
 
 export function ProjectModal({ 
@@ -70,8 +77,29 @@ export function ProjectModal({
 
             <p className="text-muted-foreground">{project.description}</p>
 
+            {project.challenge && (
+              <div className="space-y-1">
+                <h4 className="font-medium">Challenge</h4>
+                <p className="text-sm text-muted-foreground">{project.challenge}</p>
+              </div>
+            )}
+
+            {project.approach && (
+              <div className="space-y-1">
+                <h4 className="font-medium">Approach</h4>
+                <p className="text-sm text-muted-foreground">{project.approach}</p>
+              </div>
+            )}
+
+            {project.result && (
+              <div className="space-y-1">
+                <h4 className="font-medium">Result</h4>
+                <p className="text-sm text-muted-foreground">{project.result}</p>
+              </div>
+            )}
+
             <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
+              {(project.technologies || project.category || []).map((tech) => (
                 <Badge key={tech} variant="outline" className="text-sm">
                   {tech}
                 </Badge>

@@ -17,8 +17,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { resumeData } from '@/lib/ResumeData';
 
 import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star } from 'lucide-react';
-import Image from 'next/image'
-import supabaseLoader from '@/utils/supabase/supabase-image-loader'
+import Image from 'next/image';
+import supabaseLoader from '@/utils/supabase/supabase-image-loader';
+import { ProjectModal } from '@/components/project-modal';
 
 
 
@@ -38,6 +39,7 @@ const projects = resumeData.projects.map((project) => ({
 
 export default function ProjectsView() {
     const [filter, setFilter] = useState('all');
+    const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
     const filteredProjects =
         filter === 'all'
@@ -76,7 +78,8 @@ export default function ProjectsView() {
                 {filteredProjects.map((project) => (
                     <Card
                         key={project.id}
-                        className='border-border/20 hover-card group overflow-hidden border shadow-none'>
+                        onClick={() => setSelectedProject(project)}
+                        className='border-border/20 hover-card group overflow-hidden border shadow-none cursor-pointer'>
                         <div className='relative overflow-hidden'>
                             <Image
                                 src={project.image[0]}
@@ -228,6 +231,12 @@ export default function ProjectsView() {
                     </CardContent>
                 </Card>
             </div>
+
+            <ProjectModal
+                project={selectedProject}
+                open={!!selectedProject}
+                onOpenChange={(open) => !open && setSelectedProject(null)}
+            />
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import Dashboard from '@/components/dashboard';
+import Dashboard from '@/app/components/dashboard';
 
 /**
  * The main page component that renders the HomePage component.

@@ -39,6 +39,7 @@ export interface ResumeData {
         phone?: string;
         github?: string;
         email?: string;
+        blog?:string;
     };
     experiences: Experience[];
     technologies: TechnologyCategory[];
@@ -52,7 +53,8 @@ export const resumeData: ResumeData = {
         website: 'https://yazan.io',
         phone: '(312) 785-4427',
         github: 'github.com/yazankittaneh',
-        email: 'hi@yazan.io'
+        email: 'hi@yazan.io',
+        blog: 'https://blog.yazan.io'
     },
     experiences: [
         {
@@ -153,7 +155,7 @@ export const resumeData: ResumeData = {
             title: 'Jail App',
             url: 'https://jail.app',
             year: '2023',
-            category: ['AI INTERFACE', 'IN DEVELOPMENT'],
+            category: ['AI VOICE MESSAGES', 'OFFLINE'],
             description: 'An AI voice platform to enable US Inmates to communicate with their loved ones.',
             challenge:
                 'The client needed a website that would break industry conventions and create a memorable impression on visitors. The existing website was generic and failed to capture the innovative spirit of the company.',
@@ -161,10 +163,7 @@ export const resumeData: ResumeData = {
                 'I stripped away unnecessary decoration and focused on raw content presentation. Using a monochromatic color scheme, bold typography, and unconventional layouts, I created a website that demands attention.',
             result: 'The redesigned website increased user engagement by 45% and extended average session duration by 2 minutes. The bold design generated significant social media attention, resulting in a 30% increase in organic traffic.',
             images: [
-                '/placeholder.svg?height=800&width=1200&text=PROJECT IMAGE 1',
-                '/placeholder.svg?height=600&width=1200&text=PROJECT IMAGE 2',
-                '/placeholder.svg?height=800&width=1200&text=PROJECT IMAGE 3',
-                '/placeholder.svg?height=600&width=1200&text=PROJECT IMAGE 4'
+                'subletinn_1.png'
             ]
         },
         {
@@ -179,7 +178,7 @@ export const resumeData: ResumeData = {
             approach:
                 'I stripped away unnecessary decoration and focused on raw content presentation. Using a monochromatic color scheme, bold typography, and unconventional layouts, I created a website that demands attention.',
             result: 'The redesigned website increased user engagement by 45% and extended average session duration by 2 minutes. The bold design generated significant social media attention, resulting in a 30% increase in organic traffic.',
-            images: ['subletinn1.png']
+            images: ['subletinn_1.png']
         },
         {
             id: 3,
@@ -193,7 +192,7 @@ export const resumeData: ResumeData = {
             approach:
                 'I stripped away unnecessary decoration and focused on raw content presentation. Using a monochromatic color scheme, bold typography, and unconventional layouts, I created a website that demands attention.',
             result: 'The redesigned website increased user engagement by 45% and extended average session duration by 2 minutes. The bold design generated significant social media attention, resulting in a 30% increase in organic traffic.',
-            images: ['/gosu1.png', '/gosu2.png']
+            images: ['subletinn_1.png']
         }
     ],
     education: [

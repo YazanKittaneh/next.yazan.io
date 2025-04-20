@@ -24,6 +24,8 @@ const nextConfig: NextConfig = {
             hostname: "images.unsplash.com",
           },
         ],
+          loader: 'custom',
+          loaderFile: './src/utils/supabase/supabase-image-loader.js',
       },
 };
 

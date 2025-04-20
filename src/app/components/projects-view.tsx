@@ -64,6 +64,14 @@ export default function ProjectsView() {
                 ? projects.filter((p) => p.featured)
                 : projects.filter((p) => p.status.toLowerCase() === filter);
 
+    if (loading) {
+        return (
+            <div className='flex h-64 items-center justify-center'>
+                <div className='animate-pulse text-muted-foreground'>Loading projects...</div>
+            </div>
+        );
+    }
+
     return (
         <div className='space-y-8'>
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
@@ -91,7 +99,7 @@ export default function ProjectsView() {
             </div>
 
             <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-                {filteredProjects.map((project) => (
+                {filteredProjects?.map((project) => (
                     <Card
                         key={project.id}
                         onClick={() => setSelectedProject(project)}
@@ -157,14 +165,18 @@ export default function ProjectsView() {
                         </CardHeader>
                         <CardContent className='p-4 pt-0'>
                             <div className='flex flex-wrap gap-1'>
-                                {project.technologies.map((tech) => (
+                                {project.technologies?.map((tech) => (
                                     <Badge
                                         key={tech}
                                         variant='outline'
                                         className='bg-secondary/30 border-border/20 text-xs font-normal'>
                                         {tech}
                                     </Badge>
-                                ))}
+                                )) ?? (
+                                    <Badge variant='outline' className='bg-secondary/30 border-border/20 text-xs font-normal'>
+                                        No technologies listed
+                                    </Badge>
+                                )}
                             </div>
                         </CardContent>
                         <CardFooter className='border-border/20 text-muted-foreground flex items-center justify-between border-t p-4 text-sm'>
@@ -197,14 +209,14 @@ export default function ProjectsView() {
                                     <FileCode2 className='text-muted-foreground h-4 w-4' />
                                     <span className='text-sm'>Total Projects</span>
                                 </div>
-                                <span className='font-normal'>{projects.length}</span>
+                                <span className='font-normal'>{projects?.length ?? 0}</span>
                             </div>
                             <div className='flex items-center justify-between'>
                                 <div className='flex items-center gap-2'>
                                     <Star className='text-muted-foreground h-4 w-4' />
                                     <span className='text-sm'>Featured Projects</span>
                                 </div>
-                                <span className='font-normal'>{projects.filter((p) => p.featured).length}</span>
+                                <span className='font-normal'>{projects?.filter((p) => p?.featured).length ?? 0}</span>
                             </div>
                             <div className='flex items-center justify-between'>
                                 <div className='flex items-center gap-2'>
@@ -212,7 +224,7 @@ export default function ProjectsView() {
                                     <span className='text-sm'>In Progress</span>
                                 </div>
                                 <span className='font-normal'>
-                                    {projects.filter((p) => p.status === 'In Progress').length}
+                                    {projects?.filter((p) => p?.status === 'In Progress').length ?? 0}
                                 </span>
                             </div>
                         </div>

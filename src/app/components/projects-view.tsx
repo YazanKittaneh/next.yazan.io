@@ -98,7 +98,7 @@ export default function ProjectsView() {
                         className='border-border/20 hover-card group overflow-hidden border shadow-none cursor-pointer'>
                         <div className='relative overflow-hidden'>
                             <Image
-                                src={project.image[0]}
+                                src={project.images[0]}
                                 alt={`Screenshot of ${project.title} project`}
                                 width={400}
                                 height={225}

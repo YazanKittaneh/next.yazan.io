@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { createClient } from '@/utils/supabase/client';
+import { createClient } from '@/utils/supabase/clients';
 import { Project } from '@/lib/supabase/resume.types';
 
 import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star } from 'lucide-react';
@@ -25,20 +25,21 @@ import { ProjectModal } from '@/components/project-modal';
 
 
 async function getProjects(): Promise<Project[]> {
-  const supabase = createClient();
-  const { data, error } = await supabase.from('yk_projects').select('*');
-  
-  if (error) {
-    console.error('Error fetching projects:', error);
-    return [];
-  }
+    const supabase = createClient();
+    const { data, error } = await supabase.from('yk_projects').select('*');
 
-  return data.map(project => ({
-    ...project,
-    status: project.category.includes('IN DEVELOPMENT') ? 'In Progress' : 'Completed',
-    github: 'https://github.com',
-    featured: true
-  }));
+    if (error) {
+        console.error('Error fetching projects:', error);
+
+        return [];
+    }
+
+    return data.map(project => ({
+        ...project,
+        status: project.category.includes('IN DEVELOPMENT') ? 'In Progress' : 'Completed',
+        github: 'https://github.com',
+        featured: true
+    }));
 }
 
 export default function ProjectsView() {

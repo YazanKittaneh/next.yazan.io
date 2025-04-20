@@ -39,7 +39,7 @@ export function ProjectModal({
         <div className="grid gap-6 md:grid-cols-1">
           <div className="relative">
             <Carousel>
-              {project.image.map((img, i) => (
+              {project.images.map((img, i) => (
                 <div key={i} className="relative aspect-video">
                   <Image
                     src={img}

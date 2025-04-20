@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import { useState } from 'react';
+import { createClient } from '@/utils/supabase/client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -27,13 +28,25 @@ export default function ContactView() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
+        const supabase = createClient();
+        
+        try {
+            const { error } = await supabase
+                .from('contact_submissions')
+                .insert([{
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    created_at: new Date().toISOString()
+                }]);
+
+            if (error) throw error;
+
             toast.success('Message sent!', {
                 description: "Thanks for reaching out. I'll get back to you soon."
             });
@@ -43,7 +56,13 @@ export default function ContactView() {
                 subject: '',
                 message: ''
             });
-        }, 1500);
+        } catch (error) {
+            toast.error('Failed to send message', {
+                description: error instanceof Error ? error.message : 'Please try again later.'
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (

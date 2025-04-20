@@ -8,24 +8,7 @@ import { ExternalLink, Github, X } from "lucide-react";
 import Image, { ImageLoader } from "next/image";
 import supabaseLoader from "@/utils/supabase/supabase-image-loader";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string[];
-  status: string;
-  date: string;
-  technologies: string[];
-  github?: string;
-  demo?: string;
-  featured?: boolean;
-  category?: string[];
-  url?: string;
-  year?: string;
-  challenge?: string;
-  approach?: string;
-  result?: string;
-}
+import { Project } from '@/lib/supabase/resume.types';
 
 export function ProjectModal({
   project,
@@ -36,6 +19,8 @@ export function ProjectModal({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
+  if (!project) return null;
+
   if (!project) return null;
 
   return (

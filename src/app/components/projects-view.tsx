@@ -14,7 +14,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { resumeData } from '@/lib/ResumeData';
+import { createClient } from '@/utils/supabase/client';
+import { Project } from '@/lib/supabase/resume.types';
 
 import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star } from 'lucide-react';
 import Image, { ImageLoader } from 'next/image';
@@ -23,23 +24,37 @@ import { ProjectModal } from '@/components/project-modal';
 
 
 
-// Map the projects to match the expected format
-const projects = resumeData.projects.map((project) => ({
-    id: project.id,
-    title: project.title,
-    description: project.description,
-    image: project.images,
+async function getProjects(): Promise<Project[]> {
+  const supabase = createClient();
+  const { data, error } = await supabase.from('yk_projects').select('*');
+  
+  if (error) {
+    console.error('Error fetching projects:', error);
+    return [];
+  }
+
+  return data.map(project => ({
+    ...project,
     status: project.category.includes('IN DEVELOPMENT') ? 'In Progress' : 'Completed',
-    date: project.year,
-    technologies: project.category,
     github: 'https://github.com',
-    demo: project.url,
     featured: true
-}));
+  }));
+}
 
 export default function ProjectsView() {
     const [filter, setFilter] = useState('all');
-    const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadProjects() {
+            const projects = await getProjects();
+            setProjects(projects);
+            setLoading(false);
+        }
+        loadProjects();
+    }, []);
 
     const filteredProjects =
         filter === 'all'

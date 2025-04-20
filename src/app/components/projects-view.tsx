@@ -17,7 +17,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { resumeData } from '@/lib/ResumeData';
 
 import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star } from 'lucide-react';
-import Image from 'next/image';
+import Image, { ImageLoader } from 'next/image';
 import supabaseLoader from '@/utils/supabase/supabase-image-loader';
 import { ProjectModal } from '@/components/project-modal';
 
@@ -87,7 +87,7 @@ export default function ProjectsView() {
                                 width={400}
                                 height={225}
                                 className="w-full h-auto aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
-                                loader={supabaseLoader}
+                                loader={supabaseLoader as ImageLoader}
                             />
                             <div className='absolute top-2 right-2'>
                                 <DropdownMenu>

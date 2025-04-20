@@ -5,7 +5,7 @@ import { Carousel } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, X } from "lucide-react";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 import supabaseLoader from "@/utils/supabase/supabase-image-loader";
 
 interface Project {
@@ -27,10 +27,10 @@ interface Project {
   result?: string;
 }
 
-export function ProjectModal({ 
+export function ProjectModal({
   project,
   open,
-  onOpenChange 
+  onOpenChange
 }: {
   project: Project | null;
   open: boolean;
@@ -40,17 +40,18 @@ export function ProjectModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl p-0 overflow-hidden">
-        <Button
+      <DialogContent className="max-w-full p-0 overflow-hidden">
+        < Button
           variant="ghost"
           size="icon"
           className="absolute right-4 top-4 z-10 bg-background/80 hover:bg-background"
-          onClick={() => onOpenChange(false)}
+          onClick={() => onOpenChange(false)
+          }
         >
           <X className="h-5 w-5" />
-        </Button>
+        </Button >
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-1">
           <div className="relative">
             <Carousel>
               {project.image.map((img, i) => (
@@ -60,7 +61,7 @@ export function ProjectModal({
                     alt={`${project.title} screenshot ${i + 1}`}
                     fill
                     className="object-cover"
-                    loader={supabaseLoader}
+                    loader={supabaseLoader as ImageLoader}
                   />
                 </div>
               ))}
@@ -140,7 +141,7 @@ export function ProjectModal({
             </div>
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </DialogContent >
+    </Dialog >
   );
 }

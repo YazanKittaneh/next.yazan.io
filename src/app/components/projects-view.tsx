@@ -62,15 +62,18 @@ export default function ProjectsView() {
         .filter(project => {
             if (filter === 'featured') return project.featured;
             if (filter !== 'all') return (project.status?.toLowerCase() ?? '') === filter;
+
             return true;
         })
         .filter(project => {
             if (!searchTerm) return true;
             const term = searchTerm.toLowerCase();
+
             return (
                 project.title.toLowerCase().includes(term) ||
                 project.description.toLowerCase().includes(term) ||
                 (project.technologies ?? []).some(tech => tech.toLowerCase().includes(term))
+            )
         });
 
     if (loading) {

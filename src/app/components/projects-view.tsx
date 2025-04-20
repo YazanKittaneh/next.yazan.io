@@ -200,7 +200,7 @@ export default function ProjectsView() {
             </div>
 
             <div className='grid gap-6 md:grid-cols-3'>
-                <Card className='border-border/20 hover-card border shadow-none'>
+                {/* <Card className='border-border/20 hover-card border shadow-none'>
                     <CardHeader className='pb-2'>
                         <CardTitle className='text-sm font-normal'>Project Stats</CardTitle>
                     </CardHeader>
@@ -231,9 +231,9 @@ export default function ProjectsView() {
                             </div>
                         </div>
                     </CardContent>
-                </Card>
+                </Card> */}
 
-                <Card className='border-border/20 hover-card col-span-2 border shadow-none'>
+                {/* <Card className='border-border/20 hover-card col-span-2 border shadow-none'>
                     <CardHeader className='pb-2'>
                         <CardTitle className='text-sm font-normal'>Technologies Used</CardTitle>
                     </CardHeader>
@@ -259,7 +259,7 @@ export default function ProjectsView() {
                             ))}
                         </div>
                     </CardContent>
-                </Card>
+                </Card> */}
             </div>
 
             <ProjectModal

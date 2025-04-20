@@ -378,7 +378,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/dialog.tsx');
+            const mod = await import('@/components/ui/dialog');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;

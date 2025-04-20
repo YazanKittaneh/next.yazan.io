@@ -24,8 +24,8 @@ export function ProjectModal({
   if (!project) return null;
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-full p-0 overflow-hidden">
+    <Dialog open={open} onOpenChange={onOpenChange} >
+      <DialogContent className="p-0 overflow-hidden  !max-w-fit" >
         < Button
           variant="ghost"
           size="icon"
@@ -39,7 +39,7 @@ export function ProjectModal({
         <div className="grid gap-6 md:grid-cols-1">
           <div className="relative">
             <Carousel>
-              {(project.images || project.image || []).map((img, i) => (
+              {(project.images || project.images || []).map((img, i) => (
                 <div key={i} className="relative aspect-video">
                   <Image
                     src={img}

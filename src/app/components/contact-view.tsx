@@ -2,7 +2,7 @@
 
 import type React from 'react';
 import { useState } from 'react';
-import { createClient } from '@/utils/supabase/client';
+import { createClient } from '@/utils/supabase/clients';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -33,7 +33,7 @@ export default function ContactView() {
         setIsSubmitting(true);
 
         const supabase = createClient();
-        
+
         try {
             const { error } = await supabase
                 .from('contact_submissions')

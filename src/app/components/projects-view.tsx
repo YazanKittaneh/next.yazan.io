@@ -165,14 +165,16 @@ export default function ProjectsView() {
                         </CardHeader>
                         <CardContent className='p-4 pt-0'>
                             <div className='flex flex-wrap gap-1'>
-                                {project.technologies?.map((tech) => (
-                                    <Badge
-                                        key={tech}
-                                        variant='outline'
-                                        className='bg-secondary/30 border-border/20 text-xs font-normal'>
-                                        {tech}
-                                    </Badge>
-                                )) ?? (
+                                {(project.technologies ?? []).length > 0 ? (
+                                    project.technologies?.map((tech) => (
+                                        <Badge
+                                            key={tech}
+                                            variant='outline'
+                                            className='bg-secondary/30 border-border/20 text-xs font-normal'>
+                                            {tech}
+                                        </Badge>
+                                    ))
+                                ) : (
                                     <Badge variant='outline' className='bg-secondary/30 border-border/20 text-xs font-normal'>
                                         No technologies listed
                                     </Badge>
@@ -242,13 +244,13 @@ export default function ProjectsView() {
                                     <div className='flex items-center justify-between text-sm'>
                                         <span>{tech}</span>
                                         <span className='text-muted-foreground'>
-                                            {projects.filter((p) => p.technologies.includes(tech)).length} projects
+                                            {projects.filter((p) => p.technologies?.includes(tech) ?? false).length} projects
                                         </span>
                                     </div>
                                     <Progress
                                         value={
-                                            (projects.filter((p) => p.technologies.includes(tech)).length /
-                                                projects.length) *
+                                            (projects.filter((p) => p.technologies?.includes(tech) ?? false).length /
+                                                Math.max(1, projects.length)) *
                                             100
                                         }
                                         className='bg-secondary/30 progress-animate h-1'

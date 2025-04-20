@@ -77,7 +77,7 @@ export default function ProjectsView() {
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
                     <h2 className='text-foreground/90 text-2xl font-normal tracking-tight'>Projects</h2>
-                    <p className='text-muted-foreground'>Browse through my portfolio of {projects.length} projects</p>
+                    <p className='text-muted-foreground'>Browse through my portfolio of projects</p>
                 </div>
                 <div className='flex items-center gap-2'>
                     <Input

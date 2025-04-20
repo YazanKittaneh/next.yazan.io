@@ -44,6 +44,7 @@ async function getProjects(): Promise<Project[]> {
 
 export default function ProjectsView() {
     const [filter, setFilter] = useState('all');
+    const [searchTerm, setSearchTerm] = useState('');
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
@@ -57,12 +58,20 @@ export default function ProjectsView() {
         loadProjects();
     }, []);
 
-    const filteredProjects =
-        filter === 'all'
-            ? projects
-            : filter === 'featured'
-                ? projects.filter((p) => p.featured)
-                : projects.filter((p) => (p.status?.toLowerCase() ?? '') === filter);
+    const filteredProjects = projects
+        .filter(project => {
+            if (filter === 'featured') return project.featured;
+            if (filter !== 'all') return (project.status?.toLowerCase() ?? '') === filter;
+            return true;
+        })
+        .filter(project => {
+            if (!searchTerm) return true;
+            const term = searchTerm.toLowerCase();
+            return (
+                project.title.toLowerCase().includes(term) ||
+                project.description.toLowerCase().includes(term) ||
+                (project.technologies ?? []).some(tech => tech.toLowerCase().includes(term))
+        });
 
     if (loading) {
         return (
@@ -82,6 +91,8 @@ export default function ProjectsView() {
                 <div className='flex items-center gap-2'>
                     <Input
                         placeholder='Search projects...'
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                         className='border-border/30 bg-background/50 focus:border-primary/30 max-w-[200px] transition-colors duration-200'
                     />
                     <Select defaultValue='all' onValueChange={setFilter}>

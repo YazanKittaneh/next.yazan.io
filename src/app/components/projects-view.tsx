@@ -36,7 +36,7 @@ async function getProjects(): Promise<Project[]> {
 
     return data.map(project => ({
         ...project,
-        status: project.category.includes('IN DEVELOPMENT') ? 'In Progress' : 'Completed',
+        status: project.category?.includes('IN DEVELOPMENT') ? 'In Progress' : 'Completed',
         github: 'https://github.com',
         featured: true
     }));
@@ -62,7 +62,7 @@ export default function ProjectsView() {
             ? projects
             : filter === 'featured'
                 ? projects.filter((p) => p.featured)
-                : projects.filter((p) => p.status.toLowerCase() === filter);
+                : projects.filter((p) => (p.status?.toLowerCase() ?? '') === filter);
 
     if (loading) {
         return (
@@ -156,9 +156,9 @@ export default function ProjectsView() {
                             <div className='flex items-start justify-between'>
                                 <CardTitle className='text-lg font-normal'>{project.title}</CardTitle>
                                 <Badge
-                                    variant={project.status === 'Completed' ? 'default' : 'secondary'}
+                                    variant={(project.status ?? 'In Progress') === 'Completed' ? 'default' : 'secondary'}
                                     className='text-xs font-normal'>
-                                    {project.status}
+                                    {project.status ?? 'In Progress'}
                                 </Badge>
                             </div>
                             <CardDescription className='mt-1 line-clamp-2'>{project.description}</CardDescription>
@@ -226,7 +226,7 @@ export default function ProjectsView() {
                                     <span className='text-sm'>In Progress</span>
                                 </div>
                                 <span className='font-normal'>
-                                    {projects?.filter((p) => p?.status === 'In Progress').length ?? 0}
+                                    {projects?.filter((p) => (p?.status ?? 'In Progress') === 'In Progress').length ?? 0}
                                 </span>
                             </div>
                         </div>

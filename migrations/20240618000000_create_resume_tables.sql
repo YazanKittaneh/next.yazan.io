@@ -1,5 +1,5 @@
--- Create tables for resume data
-CREATE TABLE IF NOT EXISTS experiences (
+-- Create tables for resume data with yk_ prefix
+CREATE TABLE IF NOT EXISTS yk_experiences (
   id SERIAL PRIMARY KEY,
   company TEXT NOT NULL,
   company_url TEXT,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS experiences (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS projects (
+CREATE TABLE IF NOT EXISTS yk_projects (
   id SERIAL PRIMARY KEY,
   title TEXT NOT NULL,
   url TEXT,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS projects (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS education (
+CREATE TABLE IF NOT EXISTS yk_education (
   id SERIAL PRIMARY KEY,
   institution TEXT NOT NULL,
   degree TEXT NOT NULL,
@@ -33,14 +33,14 @@ CREATE TABLE IF NOT EXISTS education (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS technology_categories (
+CREATE TABLE IF NOT EXISTS yk_technology_categories (
   id SERIAL PRIMARY KEY,
   category TEXT NOT NULL,
   skills TEXT[] NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS resume (
+CREATE TABLE IF NOT EXISTS yk_resume (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   contact JSONB NOT NULL,

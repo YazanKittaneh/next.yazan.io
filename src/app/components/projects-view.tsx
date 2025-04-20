@@ -18,6 +18,7 @@ import { resumeData } from '@/lib/ResumeData';
 
 import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star } from 'lucide-react';
 import Image from 'next/image'
+import supabaseLoader from '@/utils/supabase/supabase-image-loader'
 
 
 
@@ -77,7 +78,14 @@ export default function ProjectsView() {
                         key={project.id}
                         className='border-border/20 hover-card group overflow-hidden border shadow-none'>
                         <div className='relative overflow-hidden'>
-                            <Image src={project.image[0]} alt="Picture of the author" width={150} height={150} />
+                            <Image
+                                src={project.image[0]}
+                                alt={`Screenshot of ${project.title} project`}
+                                width={400}
+                                height={225}
+                                className="w-full h-auto aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
+                                loader={supabaseLoader}
+                            />
                             <div className='absolute top-2 right-2'>
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>

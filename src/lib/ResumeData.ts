@@ -195,7 +195,7 @@ export const resumeData: ResumeData = {
                 'I stripped away unnecessary decoration and focused on raw content presentation. Using a monochromatic color scheme, bold typography, and unconventional layouts, I created a website that demands attention.',
             result: 'The redesigned website increased user engagement by 45% and extended average session duration by 2 minutes. The bold design generated significant social media attention, resulting in a 30% increase in organic traffic.',
             images: [
-                'subletinn_1.png', 'subletinn_2.png', 'subletinn_2.png'
+                'gosu_1.jpg', 'gosu_2.jpg'
             ]
         }
     ],

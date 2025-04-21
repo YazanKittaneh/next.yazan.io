@@ -17,10 +17,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { createClient } from '@/utils/supabase/clients';
 import { Project } from '@/lib/supabase/resume.types';
 
-import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star } from 'lucide-react';
+import { Calendar, Clock, ExternalLink, FileCode2, Github, MoreHorizontal, Star, Terminal } from 'lucide-react';
 import Image, { ImageLoader } from 'next/image';
 import supabaseLoader from '@/utils/supabase/supabase-image-loader';
 import { ProjectModal } from '@/components/project-modal';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 
 
@@ -86,6 +87,13 @@ export default function ProjectsView() {
 
     return (
         <div className='space-y-8'>
+            <Alert>
+                <Terminal className="h-4 w-4" />
+                <AlertTitle>Heads up!</AlertTitle>
+                <AlertDescription>
+                    I'm currently fixing my site's backend, so info here might change in real time.
+                </AlertDescription>
+            </Alert>
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
                     <h2 className='text-foreground/90 text-2xl font-normal tracking-tight'>Projects</h2>

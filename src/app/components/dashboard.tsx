@@ -80,7 +80,7 @@ export default function Dashboard() {
                                             <span>Skills</span>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
-                                    <SidebarMenuItem>
+                                    {/* <SidebarMenuItem>
                                         <SidebarMenuButton
                                             isActive={activeView === 'about'}
                                             onClick={() => setActiveView('about')}
@@ -89,7 +89,7 @@ export default function Dashboard() {
                                             <User2 className='h-4 w-4' />
                                             <span>About</span>
                                         </SidebarMenuButton>
-                                    </SidebarMenuItem>
+                                    </SidebarMenuItem> */}
                                     <SidebarMenuItem>
                                         <SidebarMenuButton
                                             isActive={activeView === 'contact'}

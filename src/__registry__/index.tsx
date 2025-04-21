@@ -26,7 +26,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/accordion.tsx');
+            const mod = await import('@/components/ui/accordion.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -48,7 +48,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/alert.tsx');
+            const mod = await import('@/components/ui/alert.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -70,7 +70,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/alert-dialog.tsx');
+            const mod = await import('@/components/ui/alert-dialog.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -92,7 +92,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/aspect-ratio.tsx');
+            const mod = await import('@/components/ui/aspect-ratio.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -114,7 +114,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/avatar.tsx');
+            const mod = await import('@/components/ui/avatar.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -136,7 +136,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/badge.tsx');
+            const mod = await import('@/components/ui/badge.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -158,7 +158,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/breadcrumb.tsx');
+            const mod = await import('@/components/ui/breadcrumb.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -180,7 +180,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/button.tsx');
+            const mod = await import('@/components/ui/button.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -202,7 +202,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/calendar.tsx');
+            const mod = await import('@/components/ui/calendar.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -224,7 +224,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/card.tsx');
+            const mod = await import('@/components/ui/card.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -246,7 +246,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/carousel.tsx');
+            const mod = await import('@/components/ui/carousel.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -268,7 +268,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/chart.tsx');
+            const mod = await import('@/components/ui/chart.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -290,7 +290,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/checkbox.tsx');
+            const mod = await import('@/components/ui/checkbox.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -312,7 +312,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/collapsible.tsx');
+            const mod = await import('@/components/ui/collapsible.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -334,7 +334,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/command.tsx');
+            const mod = await import('@/components/ui/command.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -356,7 +356,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/context-menu.tsx');
+            const mod = await import('@/components/ui/context-menu.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -400,7 +400,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/drawer.tsx');
+            const mod = await import('@/components/ui/drawer.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -422,7 +422,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/dropdown-menu.tsx');
+            const mod = await import('@/components/ui/dropdown-menu.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -444,7 +444,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/form.tsx');
+            const mod = await import('@/components/ui/form.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -466,7 +466,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/hover-card.tsx');
+            const mod = await import('@/components/ui/hover-card.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -488,7 +488,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/input.tsx');
+            const mod = await import('@/components/ui/input.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -510,7 +510,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/input-otp.tsx');
+            const mod = await import('@/components/ui/input-otp.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -532,7 +532,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/label.tsx');
+            const mod = await import('@/components/ui/label.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -554,7 +554,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/menubar.tsx');
+            const mod = await import('@/components/ui/menubar.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -576,7 +576,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/navigation-menu.tsx');
+            const mod = await import('@/components/ui/navigation-menu.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -598,7 +598,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/pagination.tsx');
+            const mod = await import('@/components/ui/pagination.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -620,7 +620,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/popover.tsx');
+            const mod = await import('@/components/ui/popover.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -642,7 +642,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/progress.tsx');
+            const mod = await import('@/components/ui/progress.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -664,7 +664,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/radio-group.tsx');
+            const mod = await import('@/components/ui/radio-group.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -686,7 +686,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/resizable.tsx');
+            const mod = await import('@/components/ui/resizable.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -708,7 +708,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/scroll-area.tsx');
+            const mod = await import('@/components/ui/scroll-area.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -730,7 +730,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/select.tsx');
+            const mod = await import('@/components/ui/select.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -752,7 +752,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/separator.tsx');
+            const mod = await import('@/components/ui/separator.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -774,7 +774,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/sheet.tsx');
+            const mod = await import('@/components/ui/sheet.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -796,7 +796,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/sidebar.tsx');
+            const mod = await import('@/components/ui/sidebar.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -818,7 +818,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/skeleton.tsx');
+            const mod = await import('@/components/ui/skeleton.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -840,7 +840,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/slider.tsx');
+            const mod = await import('@/components/ui/slider.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -862,7 +862,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/sonner.tsx');
+            const mod = await import('@/components/ui/sonner.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -884,7 +884,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/switch.tsx');
+            const mod = await import('@/components/ui/switch.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -906,7 +906,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/table.tsx');
+            const mod = await import('@/components/ui/table.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -928,7 +928,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/tabs.tsx');
+            const mod = await import('@/components/ui/tabs.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -950,7 +950,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/textarea.tsx');
+            const mod = await import('@/components/ui/textarea.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -972,7 +972,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/toggle.tsx');
+            const mod = await import('@/components/ui/toggle.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -994,7 +994,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/toggle-group.tsx');
+            const mod = await import('@/components/ui/toggle-group.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;
@@ -1016,7 +1016,7 @@ export const Index: Record<string, any> = {
             }
         ],
         component: React.lazy(async () => {
-            const mod = await import('@/registry/new-york-v4/ui/tooltip.tsx');
+            const mod = await import('@/components/ui/tooltip.tsx');
             const exportName =
                 Object.keys(mod).find((key) => typeof mod[key] === 'function' || typeof mod[key] === 'object') ||
                 item.name;

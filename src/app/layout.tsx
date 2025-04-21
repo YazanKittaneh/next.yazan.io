@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 import { ThemeProvider } from 'next-themes';
 
 import '@/app/globals.css';
-import { Toaster } from '@/registry/new-york-v4/ui/sonner';
+import { Toaster } from '@/components/ui/sonner';
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import {
     DropdownMenu,
@@ -79,8 +80,39 @@ export default function ProjectsView() {
 
     if (loading) {
         return (
-            <div className='flex h-64 items-center justify-center'>
-                <div className='animate-pulse text-muted-foreground'>Loading projects...</div>
+            <div className='space-y-8'>
+                <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+                    <div>
+                        <Skeleton className="h-8 w-[200px]" />
+                        <Skeleton className="mt-2 h-4 w-[300px]" />
+                    </div>
+                    <div className='flex items-center gap-2'>
+                        <Skeleton className="h-10 w-[200px]" />
+                        <Skeleton className="h-10 w-[180px]" />
+                    </div>
+                </div>
+
+                <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="space-y-4">
+                            <Skeleton className="h-[225px] w-full rounded-t-lg" />
+                            <div className="space-y-2 p-4">
+                                <div className="flex justify-between">
+                                    <Skeleton className="h-6 w-3/4" />
+                                    <Skeleton className="h-6 w-16" />
+                                </div>
+                                <Skeleton className="h-4 w-full" />
+                                <Skeleton className="h-4 w-5/6" />
+                                <div className="flex flex-wrap gap-2 pt-2">
+                                    <Skeleton className="h-6 w-16" />
+                                    <Skeleton className="h-6 w-16" />
+                                    <Skeleton className="h-6 w-16" />
+                                </div>
+                            </div>
+                            <Skeleton className="h-12 w-full rounded-b-lg" />
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

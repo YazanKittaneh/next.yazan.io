@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 import AboutView from '@/app/components/about-view';
 import ContactView from '@/app/components/contact-view';
@@ -31,6 +32,7 @@ import { Activity, Code2, Folder, Github, Mail, User2 } from 'lucide-react';
 
 export default function Dashboard() {
     const [activeView, setActiveView] = useState('projects');
+    const isMobile = useIsMobile();
     const { name } = resumeData;
     const initials = name
         .split(' ')
@@ -63,7 +65,10 @@ export default function Dashboard() {
                                     <SidebarMenuItem>
                                         <SidebarMenuButton
                                             isActive={activeView === 'projects'}
-                                            onClick={() => setActiveView('projects')}
+                                            onClick={() => {
+                                                setActiveView('projects');
+                                                if (isMobile) document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+                                            }}
                                             tooltip='Projects'
                                             className='text-sm font-normal'>
                                             <Folder className='h-4 w-4' />
@@ -73,7 +78,10 @@ export default function Dashboard() {
                                     <SidebarMenuItem>
                                         <SidebarMenuButton
                                             isActive={activeView === 'skills'}
-                                            onClick={() => setActiveView('skills')}
+                                            onClick={() => {
+                                                setActiveView('skills');
+                                                if (isMobile) document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+                                            }}
                                             tooltip='Skills'
                                             className='text-sm font-normal'>
                                             <Code2 className='h-4 w-4' />
@@ -93,7 +101,10 @@ export default function Dashboard() {
                                     <SidebarMenuItem>
                                         <SidebarMenuButton
                                             isActive={activeView === 'contact'}
-                                            onClick={() => setActiveView('contact')}
+                                            onClick={() => {
+                                                setActiveView('contact');
+                                                if (isMobile) document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+                                            }}
                                             tooltip='Contact'
                                             className='text-sm font-normal'>
                                             <Mail className='h-4 w-4' />

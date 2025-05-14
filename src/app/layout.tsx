@@ -6,6 +6,7 @@ import localFont from 'next/font/local';
 import { ThemeProvider } from 'next-themes';
 
 import '@/app/globals.css';
+import { PostHogProvider } from '@/components/PostHogProvider';
 import { Toaster } from '@/components/ui/sonner';
 
 const geistSans = localFont({
@@ -31,10 +32,12 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground overscroll-none antialiased`}>
-                <ThemeProvider attribute='class'>
-                    {children}
-                    <Toaster />
-                </ThemeProvider>
+                <PostHogProvider>
+                    <ThemeProvider attribute='class'>
+                        {children}
+                        <Toaster />
+                    </ThemeProvider>
+                </PostHogProvider>
             </body>
         </html>
     );

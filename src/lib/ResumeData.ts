@@ -27,9 +27,14 @@ export interface Education {
     graduationDate: string;
 }
 
+export interface TechnologySkill {
+    name: string;
+    level: 'Expert' | 'Advanced' | 'Intermediate' | 'Beginner';
+}
+
 export interface TechnologyCategory {
     category: string;
-    skills: string[];
+    skills: TechnologySkill[];
 }
 
 export interface ResumeData {
@@ -108,44 +113,75 @@ export const resumeData: ResumeData = {
     technologies: [
         {
             category: 'Languages',
-            skills: ['JavaScript', 'TypeScript', 'Python', 'Ruby', 'GOlang', 'Kotlin', 'Spanish', 'Bash']
+            skills: [
+                { name: 'JavaScript', level: 'Expert' },
+                { name: 'TypeScript', level: 'Expert' },
+                { name: 'Python', level: 'Advanced' },
+                { name: 'Ruby', level: 'Intermediate' },
+                { name: 'GOlang', level: 'Beginner' },
+                { name: 'Kotlin', level: 'Beginner' },
+                { name: 'Spanish', level: 'Intermediate' },
+                { name: 'Bash', level: 'Advanced' }
+            ]
         },
         {
             category: 'Frontend',
-            skills: ['React (Next, Astro, React Router)', 'Svelte.js', 'Vue.js/Nuxt', 'Angular']
+            skills: [
+                { name: 'React (Next, Astro, React Router)', level: 'Expert' },
+                { name: 'Svelte.js', level: 'Intermediate' },
+                { name: 'Vue.js/Nuxt', level: 'Advanced' },
+                { name: 'Angular', level: 'Intermediate' }
+            ]
         },
         {
             category: 'Backend',
             skills: [
-                'Node.js',
-                'Flask',
-                'FastAPI',
-                'Django',
-                'Nest.js',
-                'SQL/PostgreSQL',
-                'NoSQL (MongoDB, Redis)',
-                'GraphQL'
+                { name: 'Node.js', level: 'Expert' },
+                { name: 'Flask', level: 'Advanced' },
+                { name: 'FastAPI', level: 'Advanced' },
+                { name: 'Django', level: 'Intermediate' },
+                { name: 'Nest.js', level: 'Advanced' },
+                { name: 'SQL/PostgreSQL', level: 'Advanced' },
+                { name: 'NoSQL (MongoDB, Redis)', level: 'Advanced' },
+                { name: 'GraphQL', level: 'Intermediate' }
             ]
         },
         {
             category: 'Testing',
-            skills: ['Jest', 'Jasmine', 'Cypress', 'Storybooks', 'Selenium', 'Playwrite']
+            skills: [
+                { name: 'Jest', level: 'Expert' },
+                { name: 'Jasmine', level: 'Advanced' },
+                { name: 'Cypress', level: 'Advanced' },
+                { name: 'Storybooks', level: 'Intermediate' },
+                { name: 'Selenium', level: 'Intermediate' },
+                { name: 'Playwrite', level: 'Advanced' }
+            ]
         },
         {
             category: 'Infrastructure',
-            skills: ['Docker', 'Kubernetes', 'RabbitMQ', 'GCP', 'AWS', 'Azure', 'Linux', 'Cron', 'Proxmox']
+            skills: [
+                { name: 'Docker', level: 'Advanced' },
+                { name: 'Kubernetes', level: 'Intermediate' },
+                { name: 'RabbitMQ', level: 'Intermediate' },
+                { name: 'GCP', level: 'Advanced' },
+                { name: 'AWS', level: 'Advanced' },
+                { name: 'Azure', level: 'Intermediate' },
+                { name: 'Linux', level: 'Advanced' },
+                { name: 'Cron', level: 'Advanced' },
+                { name: 'Proxmox', level: 'Intermediate' }
+            ]
         },
         {
             category: 'LLM Models',
             skills: [
-                'OpenAI',
-                'Claude',
-                'Gemini',
-                'Llama',
-                'Mixtrel',
-                'DeepSeek R1',
-                'embedding, fine-tunning, prompt engineering, agentic  development',
-                'On - prem(Proxmox, Nginx, Ansible)'
+                { name: 'OpenAI', level: 'Expert' },
+                { name: 'Claude', level: 'Advanced' },
+                { name: 'Gemini', level: 'Advanced' },
+                { name: 'Llama', level: 'Advanced' },
+                { name: 'Mixtrel', level: 'Intermediate' },
+                { name: 'DeepSeek R1', level: 'Advanced' },
+                { name: 'embedding, fine-tunning, prompt engineering, agentic development', level: 'Expert' },
+                { name: 'On-prem (Proxmox, Nginx, Ansible)', level: 'Advanced' }
             ]
         }
     ],

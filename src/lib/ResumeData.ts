@@ -29,7 +29,7 @@ export interface Education {
 
 export interface TechnologySkill {
     name: string;
-    level: 'Expert' | 'Advanced' | 'Intermediate' | 'Beginner';
+    logo: string;
 }
 
 export interface TechnologyCategory {
@@ -114,74 +114,81 @@ export const resumeData: ResumeData = {
         {
             category: 'Languages',
             skills: [
-                { name: 'JavaScript', level: 'Expert' },
-                { name: 'TypeScript', level: 'Expert' },
-                { name: 'Python', level: 'Advanced' },
-                { name: 'Ruby', level: 'Intermediate' },
-                { name: 'GOlang', level: 'Beginner' },
-                { name: 'Kotlin', level: 'Beginner' },
-                { name: 'Spanish', level: 'Intermediate' },
-                { name: 'Bash', level: 'Advanced' }
+                { name: 'JavaScript', logo: 'javascript.svg' },
+                { name: 'TypeScript', logo: 'typescript.svg' },
+                { name: 'Python', logo: 'python.svg' },
+                { name: 'Ruby', logo: 'ruby.svg' },
+                { name: 'GOlang', logo: 'golang.svg' },
+                { name: 'Kotlin', logo: 'kotlin.svg' },
+                { name: 'Spanish', logo: 'spanish.svg' },
+                { name: 'Bash', logo: 'bash.svg' }
             ]
         },
         {
             category: 'Frontend',
             skills: [
-                { name: 'React (Next, Astro, React Router)', level: 'Expert' },
-                { name: 'Svelte.js', level: 'Intermediate' },
-                { name: 'Vue.js/Nuxt', level: 'Advanced' },
-                { name: 'Angular', level: 'Intermediate' }
+                { name: 'React', logo: 'react.svg' },
+                { name: 'Next.js', logo: 'nextjs.svg' },
+                { name: 'Astro', logo: 'astro.svg' },
+                { name: 'React Router', logo: 'react-router.svg' },
+                { name: 'Svelte.js', logo: 'svelte.svg' },
+                { name: 'Vue.js', logo: 'vuejs.svg' },
+                { name: 'Nuxt', logo: 'nuxtjs.svg' },
+                { name: 'Angular', logo: 'angular.svg' }
             ]
         },
         {
             category: 'Backend',
             skills: [
-                { name: 'Node.js', level: 'Expert' },
-                { name: 'Flask', level: 'Advanced' },
-                { name: 'FastAPI', level: 'Advanced' },
-                { name: 'Django', level: 'Intermediate' },
-                { name: 'Nest.js', level: 'Advanced' },
-                { name: 'SQL/PostgreSQL', level: 'Advanced' },
-                { name: 'NoSQL (MongoDB, Redis)', level: 'Advanced' },
-                { name: 'GraphQL', level: 'Intermediate' }
+                { name: 'Node.js', logo: 'nodejs.svg' },
+                { name: 'Flask', logo: 'flask.svg' },
+                { name: 'FastAPI', logo: 'fastapi.svg' },
+                { name: 'Django', logo: 'django.svg' },
+                { name: 'Nest.js', logo: 'nestjs.svg' },
+                { name: 'PostgreSQL', logo: 'postgresql.svg' },
+                { name: 'MongoDB', logo: 'mongodb.svg' },
+                { name: 'Redis', logo: 'redis.svg' },
+                { name: 'GraphQL', logo: 'graphql.svg' }
             ]
         },
         {
             category: 'Testing',
             skills: [
-                { name: 'Jest', level: 'Expert' },
-                { name: 'Jasmine', level: 'Advanced' },
-                { name: 'Cypress', level: 'Advanced' },
-                { name: 'Storybooks', level: 'Intermediate' },
-                { name: 'Selenium', level: 'Intermediate' },
-                { name: 'Playwrite', level: 'Advanced' }
+                { name: 'Jest', logo: 'jest.svg' },
+                { name: 'Jasmine', logo: 'jasmine.svg' },
+                { name: 'Cypress', logo: 'cypress.svg' },
+                { name: 'Storybook', logo: 'storybook.svg' },
+                { name: 'Selenium', logo: 'selenium.svg' },
+                { name: 'Playwright', logo: 'playwright.svg' }
             ]
         },
         {
             category: 'Infrastructure',
             skills: [
-                { name: 'Docker', level: 'Advanced' },
-                { name: 'Kubernetes', level: 'Intermediate' },
-                { name: 'RabbitMQ', level: 'Intermediate' },
-                { name: 'GCP', level: 'Advanced' },
-                { name: 'AWS', level: 'Advanced' },
-                { name: 'Azure', level: 'Intermediate' },
-                { name: 'Linux', level: 'Advanced' },
-                { name: 'Cron', level: 'Advanced' },
-                { name: 'Proxmox', level: 'Intermediate' }
+                { name: 'Docker', logo: 'docker.svg' },
+                { name: 'Kubernetes', logo: 'kubernetes.svg' },
+                { name: 'RabbitMQ', logo: 'rabbitmq.svg' },
+                { name: 'GCP', logo: 'gcp.svg' },
+                { name: 'AWS', logo: 'aws.svg' },
+                { name: 'Azure', logo: 'azure.svg' },
+                { name: 'Linux', logo: 'linux.svg' },
+                { name: 'Cron', logo: 'cron.svg' },
+                { name: 'Proxmox', logo: 'proxmox.svg' }
             ]
         },
         {
             category: 'LLM Models',
             skills: [
-                { name: 'OpenAI', level: 'Expert' },
-                { name: 'Claude', level: 'Advanced' },
-                { name: 'Gemini', level: 'Advanced' },
-                { name: 'Llama', level: 'Advanced' },
-                { name: 'Mixtrel', level: 'Intermediate' },
-                { name: 'DeepSeek R1', level: 'Advanced' },
-                { name: 'embedding, fine-tunning, prompt engineering, agentic development', level: 'Expert' },
-                { name: 'On-prem (Proxmox, Nginx, Ansible)', level: 'Advanced' }
+                { name: 'OpenAI', logo: 'openai.svg' },
+                { name: 'Claude', logo: 'claude.svg' },
+                { name: 'Gemini', logo: 'gemini.svg' },
+                { name: 'Llama', logo: 'llama.svg' },
+                { name: 'Mixtral', logo: 'mixtral.svg' },
+                { name: 'DeepSeek R1', logo: 'deepseek.svg' },
+                { name: 'Prompt Engineering', logo: 'prompt-engineering.svg' },
+                { name: 'Fine-tuning', logo: 'fine-tuning.svg' },
+                { name: 'Nginx', logo: 'nginx.svg' },
+                { name: 'Ansible', logo: 'ansible.svg' }
             ]
         }
     ],

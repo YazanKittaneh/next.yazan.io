@@ -65,6 +65,9 @@ export default function SkillsView() {
                                             width={24}
                                             height={24}
                                             className='object-contain'
+                                            onError={(e) => {
+                                                e.currentTarget.src = '/tech-logos/fallback.svg';
+                                            }}
                                         />
                                     </div>
                                     <CardHeader className='p-0 text-center'>

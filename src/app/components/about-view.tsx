@@ -61,10 +61,10 @@ export default function AboutView() {
                                     {resumeData.technologies.slice(0, 5).flatMap((category) =>
                                         category.skills.slice(0, 1).map((skill) => (
                                             <Badge
-                                                key={skill}
+                                                key={skill.name}
                                                 variant='outline'
                                                 className='bg-secondary/30 border-border/20 text-xs font-normal'>
-                                                {skill}
+                                                {skill.name}
                                             </Badge>
                                         ))
                                     )}

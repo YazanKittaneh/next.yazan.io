@@ -12,7 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import type { Room, Lease, RoomStatus } from "@/lib/db/schema"
+interface Room {
+  id: number;
+  roomName: string;
+  roomNumber: string;
+  building: string;
+  floor: number;
+  status: string;
+}
 
 interface CalendarRoom {
   leases: CalendarLease[]
@@ -109,7 +116,7 @@ export function RoomCalendar() {
   }, [isClient])
 
   // Fetch Francis rooms using the existing hook - we need to use a custom fetcher to get lease data
-  const [francisRoomsData, setFrancisRoomsData] = useState<any[]>([])
+  const [francisRoomsData, setFrancisRoomsData] = useState<{ room: Room; currentLease: any }[]>([])
   const [dataLoading, setDataLoading] = useState(true)
   const [dataError, setDataError] = useState(false)
 

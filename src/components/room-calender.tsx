@@ -12,15 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { motion, AnimatePresence, PanInfo } from "framer-motion"
 import type { Room, Lease, RoomStatus } from "@/lib/db/schema"
-import { useRooms } from "@/app/(dashboard)/dashboard/maps/hooks/use-rooms"
 
-interface CalendarRoom extends Room {
+interface CalendarRoom {
   leases: CalendarLease[]
 }
 
-interface CalendarLease extends Lease {
+interface CalendarLease {
+  id: number
   tenantName: string | null
   startMonth: number
   endMonth: number

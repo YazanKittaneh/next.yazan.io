@@ -21,6 +21,43 @@ interface Room {
   status: string;
 }
 
+interface Lease {
+  id: number;
+  userId: number;
+  roomId: number;
+  teamId: number;
+  startDate: string | Date;
+  endDate: string | Date | null;
+  monthlyRent: number;
+  securityDeposit: number | null;
+  status: 'active' | 'pending';
+  leaseTerms: string | null;
+  dateSigned: string | Date | null;
+  movedIn: boolean;
+  moveinFeePaid: boolean;
+  moveinFeeAmount: number | null;
+  tenantName: string | null;
+  tenantEmail: string | null;
+  tenantPhone: string | null;
+  tenantPreviousAddress: string | null;
+  tenantEmergencyContact: string | null;
+  tenantEmergencyPhone: string | null;
+  tenantEmployer: string | null;
+  tenantEmployerPhone: string | null;
+  leaseDate: string | Date | null;
+  moveInDate: string | Date | null;
+  moveOutDate: string | Date | null;
+  signatureDate: string | Date | null;
+  rentRate: number | null;
+  leaseTerm: string | null;
+  monthsSelected: string | null;
+  activePeriods: string | null;
+  documentUrl: string | null;
+  createdAt: string | Date;
+  updatedAt: string | Date;
+  deletedAt: string | Date | null;
+}
+
 interface CalendarRoom {
   leases: CalendarLease[]
 }

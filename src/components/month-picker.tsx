@@ -40,7 +40,8 @@ const getAbsoluteMonth = (month: number, year: number, baseYear: number) => {
 const getMonthYear = (absoluteMonth: number, baseYear: number) => {
   const year = baseYear + Math.floor(absoluteMonth / 12)
   const month = absoluteMonth % 12
-  return { month, year }
+  
+return { month, year }
 }
 
 export default function MonthPicker() {
@@ -110,7 +111,8 @@ export default function MonthPicker() {
         })
       }
     }
-    return months
+    
+return months
   }
 
   const months = getMonthsForDisplay()
@@ -143,7 +145,8 @@ export default function MonthPicker() {
   useEffect(() => {
     if (isDragging) {
       document.addEventListener("mouseup", handleMouseUp)
-      return () => document.removeEventListener("mouseup", handleMouseUp)
+      
+return () => document.removeEventListener("mouseup", handleMouseUp)
     }
   }, [isDragging])
 
@@ -210,7 +213,8 @@ export default function MonthPicker() {
                   <div className="flex gap-0.5 mb-2">
                     {months.map((monthData) => {
                       const { month, year, absoluteMonth, isFirstOfYear } = monthData
-                      return (
+                      
+return (
                         <div key={`year-${year}-${month}`} className="w-8 h-4 flex items-center justify-center">
                           {isFirstOfYear && <div className="text-xs font-medium text-muted-foreground">{year}</div>}
                         </div>

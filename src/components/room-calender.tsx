@@ -58,11 +58,11 @@ interface Lease {
   deletedAt: string | Date | null;
 }
 
-interface CalendarRoom {
+interface CalendarRoom extends Room {
   leases: CalendarLease[]
 }
 
-interface CalendarLease {
+interface CalendarLease extends Lease {
   id: number
   tenantName: string | null
   startMonth: number
@@ -216,7 +216,7 @@ export function RoomCalendar() {
         id: -room.id, // Unique negative ID for maintenance
         userId: 0,
         roomId: room.id,
-        teamId: room.teamId,
+        teamId: 0,
         startDate: startDate,
         endDate: endDate,
         monthlyRent: 0,

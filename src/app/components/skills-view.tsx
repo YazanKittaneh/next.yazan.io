@@ -36,7 +36,7 @@ const getIconForCategory = (category: string) => {
 // Add icon mapping function
 const getIconForSkill = (name: string) => {
     // Map skill names to devicon components
-    const iconMap: Record<string, JSX.Element> = {
+    const iconMap: Record<string, React.ReactElement> = {
         // Languages
         "JavaScript": <SiJavascript className="text-xl text-yellow-400" />,
         "TypeScript": <SiTypescript className="text-xl text-blue-600" />,

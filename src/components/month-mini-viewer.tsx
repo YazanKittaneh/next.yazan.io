@@ -44,7 +44,8 @@ export default function MonthMiniViewer({
   // Sort months chronologically
   const sortedMonths = [...months].sort((a, b) => {
     if (a.year !== b.year) return a.year - b.year
-    return a.month - b.month
+    
+return a.month - b.month
   })
 
   // Remove duplicates
@@ -59,7 +60,8 @@ export default function MonthMiniViewer({
         acc[month.year] = []
       }
       acc[month.year].push(month)
-      return acc
+      
+return acc
     },
     {} as Record<number, Month[]>,
   )
